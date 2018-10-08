@@ -14,16 +14,10 @@ it("should return the sum of two numbers", () => {
 
 it("should sumarize multiple numbers", () => {
     expect(add("1, 2, 3")).toBe(6);
-});
-
-it("should sumarize multiple numbers", () => {
     expect(add("1, 2, 3, 10")).toBe(16);
 });
 
 it("should sumarize multiple number separated by a new line", () => {
     expect(add("1 \n2 \n3")).toBe(6);
-});
-
-it("should sumarize multiple number separated by a new line", () => {
     expect(add("1 \n2, 3")).toBe(6);
 });
