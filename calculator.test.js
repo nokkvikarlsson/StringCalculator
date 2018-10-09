@@ -21,3 +21,14 @@ it("should sumarize multiple number separated by a new line", () => {
     expect(add("1 \n2 \n3")).toBe(6);
     expect(add("1 \n2, 3")).toBe(6);
 });
+
+it("should throw an error for a negative number", () => {
+    expect(() => {
+        add("-1,2");
+    }).toThrow("Negatives not allowed:-1");
+
+    expect(() => {
+        add("2,-4,3,-5");
+    }).toThrow("Negatives not allowed:-4,-5");
+
+});
