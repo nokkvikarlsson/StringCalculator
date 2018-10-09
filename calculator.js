@@ -1,17 +1,8 @@
 function add (numbers){
     
-    if(numbers == ""){
-        return 0;
-    }
-
-    if(numbers.includes(",") || numbers.includes("\n")){
-        var numberArray = numbers.split(/[,\n]/);
-        checkArray(numberArray);
-        return sum(numberArray);
-    }
-    else{
-        return parseInt(numbers);
-    }
+    var numberArray = numbers.split(/[,\n]/);
+    checkArray(numberArray);
+    return sum(numberArray);
 }
 
 function checkArray(numberArray){
