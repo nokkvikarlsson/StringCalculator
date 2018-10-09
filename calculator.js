@@ -6,7 +6,7 @@ function add (numbers){
 
     if(numbers.includes(",") || numbers.includes("\n")){
         var numberArray = numbers.split(/[,\n]/);
-        validArray(numberArray);
+        checkArray(numberArray);
         return sum(numberArray);
     }
     else{
@@ -14,7 +14,7 @@ function add (numbers){
     }
 }
 
-function validArray(numberArray){
+function checkArray(numberArray){
    
     var negativeNumbers = [];
     for(var i = 0; i < numberArray.length; i++) {
@@ -25,7 +25,6 @@ function validArray(numberArray){
     if(negativeNumbers.length > 0) {
         throw new Error("Negatives not allowed:" + negativeNumbers);
     }
-
 }
 
 function sum(numberArray){
