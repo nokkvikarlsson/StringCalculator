@@ -6,22 +6,26 @@ function add (numbers){
 
     if(numbers.includes(",") || numbers.includes("\n")){
         var numberArray = numbers.split(/[,\n]/);
-
-        var negativeNumbers = [];
-        for(var i = 0; i < numberArray.length; i++) {
-            if(parseInt(numberArray[i]) < 0) {
-                negativeNumbers.push(numberArray[i]);
-            } 
-        }
-        if(negativeNumbers.length > 0) {
-            throw new Error("Negatives not allowed:" + negativeNumbers);
-        }
-
+        validArray(numberArray);
         return sum(numberArray);
     }
     else{
         return parseInt(numbers);
     }
+}
+
+function validArray(numberArray){
+   
+    var negativeNumbers = [];
+    for(var i = 0; i < numberArray.length; i++) {
+        if(parseInt(numberArray[i]) < 0) {
+            negativeNumbers.push(numberArray[i]);
+        } 
+    }
+    if(negativeNumbers.length > 0) {
+        throw new Error("Negatives not allowed:" + negativeNumbers);
+    }
+
 }
 
 function sum(numberArray){
