@@ -1,6 +1,13 @@
 function add (numbers){
     
     var numberArray = numbers.split(/[,\n]/);
+    
+    if(numberArray[0].includes("//")){
+        var delimiter = numberArray[0].substring(2);
+        numberArray.splice(0, 1);
+        numberArray = numbers.split(/[, \n delimiter]/);
+    }
+
     checkArray(numberArray);
     return sum(numberArray);
 }
