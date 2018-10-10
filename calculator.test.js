@@ -42,5 +42,5 @@ it("should ignore numbers larger than 1000", () => {
 it("should handle a different delimeter than ',' or '\n' ", () => {
     expect(add("//;\n1; 2")).toBe(3);
     expect(add("//!\n1! 2! 3")).toBe(6);
-    expect(add("//!\n1! 2, 3 \n4")).toBe(10);
+    expect(add("//hugb\n1hugb 2hugb 3hugb 4")).toBe(10);
 });
